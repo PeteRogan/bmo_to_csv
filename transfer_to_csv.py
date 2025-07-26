@@ -12,7 +12,7 @@ class csv_class:
         self.file_name = 'eStatement.csv'
         self.fields = ['Date', 'Total_Deducted', 'Total_Added', 'Closing_Balance', '', ''] #Note: empty values to separate totals from transactions
         self.rows = []
-        self.account_number = int(input("Enter account number: "))
+        self.account_number = input("Enter account number: ")
 
     def add_row(self, file_name, text):
         row = []
@@ -69,7 +69,7 @@ class csv_class:
             csvwriter.writerow(self.fields)
             csvwriter.writerows(self.rows)
 
-stmt_dir = "./Input/Debit/"
+stmt_dir = "./Input/"
 csv_obj = csv_class()
 name_list = sorted(os.listdir(stmt_dir))
 for file_name in name_list:
